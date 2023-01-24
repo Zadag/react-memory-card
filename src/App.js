@@ -18,7 +18,11 @@ function App() {
   return (
     <div className="w-screen h-screen flex flex-col">
       <Header score={score} maxScore={maxScore} />
-      <Content incrementScore={incrementScore} score={score} />
+      <Content
+        incrementScore={incrementScore}
+        score={score}
+        resetScore={resetScore}
+      />
       <button onClick={resetScore}>Reset Score</button>
     </div>
   );
