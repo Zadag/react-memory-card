@@ -7,8 +7,8 @@ function App() {
   const [maxScore, setMaxScore] = useState(score);
 
   const incrementScore = () => {
-    setScore(score + 1);
-    if (score >= maxScore) setMaxScore(maxScore + 1);
+    setScore((prevScore) => prevScore + 1);
+    if (score >= maxScore) setMaxScore((prevMaxScore) => prevMaxScore + 1);
   };
 
   const resetScore = () => {
