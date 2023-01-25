@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
+import shuffle from "../utils/shuffle";
 
 const Content = ({ incrementScore, resetScore }) => {
   const [cardData, setCardData] = useState([
@@ -25,7 +26,9 @@ const Content = ({ incrementScore, resetScore }) => {
     const newCards = structuredClone(cardData);
     const theCard = newCards.find((card) => card.name === name);
     theCard.clicked = true;
-    setCardData(newCards);
+    // Before we update state, shuffle the cards in order to randomize the board
+    const shuffled = shuffle(newCards);
+    setCardData(shuffled);
   };
 
   const resetClicked = () => {
@@ -34,7 +37,6 @@ const Content = ({ incrementScore, resetScore }) => {
       card.clicked = false;
     });
 
-    console.log(newCards);
     setCardData(newCards);
   };
 
@@ -58,38 +60,6 @@ const Content = ({ incrementScore, resetScore }) => {
       </div>
     </>
   );
-
-  // return (
-  //   <div className="bg-black grow p-12">
-  //     <div className="container max-w-fit mx-auto flex flex-wrap bg-slate-700 p-4 justify-center">
-  //       <Card
-  //         name="Kevin"
-  //         incrementScore={incrementScore}
-  //         score={score}
-  //         resetScore={resetScore}
-  //       />
-  //       <Card
-  //         name="Colin"
-  //         incrementScore={incrementScore}
-  //         score={score}
-  //         resetScore={resetScore}
-  //       />
-  //       <Card
-  //         name="Ryan"
-  //         incrementScore={incrementScore}
-  //         score={score}
-  //         resetScore={resetScore}
-  //       />
-  //       <Card
-  //         name="Kate"
-  //         incrementScore={incrementScore}
-  //         score={score}
-  //         resetScore={resetScore}
-  //       />
-  //     </div>
-  //     <h1 className="text-2xl text-purple-700">test</h1>
-  //   </div>
-  // );
 };
 
 export default Content;

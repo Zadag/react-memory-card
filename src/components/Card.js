@@ -7,6 +7,7 @@ const Card = ({
   resetScore,
   resetClicked,
   setClicked,
+  shuffleCardData,
 }) => {
   // const resetClicked = () => {
   //   setClicked(false);
@@ -16,6 +17,7 @@ const Card = ({
     if (clicked === false) {
       incrementScore();
       setClicked(name);
+      //shuffleCardData();
     } else {
       resetScore();
       resetClicked();
