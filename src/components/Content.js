@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import shuffle from "../utils/shuffle";
 
@@ -21,6 +21,12 @@ const Content = ({ incrementScore, resetScore }) => {
       clicked: false,
     },
   ]);
+
+  useEffect(() => {
+    const initialCards = structuredClone(cardData);
+    const shuffled = shuffle(initialCards);
+    setCardData(initialCards);
+  }, []);
 
   const setClicked = (name) => {
     const newCards = structuredClone(cardData);
@@ -47,6 +53,7 @@ const Content = ({ incrementScore, resetScore }) => {
           {cardData.map((card) => {
             return (
               <Card
+                key={card.name}
                 name={card.name}
                 clicked={card.clicked}
                 incrementScore={incrementScore}
