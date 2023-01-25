@@ -17,7 +17,6 @@ const Card = ({
     if (clicked === false) {
       incrementScore();
       setClicked(name);
-      //shuffleCardData();
     } else {
       resetScore();
       resetClicked();
@@ -25,11 +24,11 @@ const Card = ({
   };
   return (
     <div
-      className="bg-gray-500 m-4 text-center cursor-pointer"
+      className="bg-gray-500 m-4 text-center cursor-pointer shadow-2xl rounded-xl"
       onClick={handleClick}
     >
       <p>{clicked.toString()}</p>
-      <div className="bg-lime-300 p-12">
+      <div className="bg-lime-300 p-12 rounded-b-xl">
         <p>{name}</p>
       </div>
     </div>

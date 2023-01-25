@@ -20,6 +20,18 @@ const Content = ({ incrementScore, resetScore }) => {
       name: "Kate",
       clicked: false,
     },
+    {
+      name: "Joel",
+      clicked: false,
+    },
+    {
+      name: "Ellie",
+      clicked: false,
+    },
+    {
+      name: "Fernandinho",
+      clicked: false,
+    },
   ]);
 
   useEffect(() => {
