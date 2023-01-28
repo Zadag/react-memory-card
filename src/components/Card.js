@@ -9,10 +9,6 @@ const Card = ({
   setClicked,
   shuffleCardData,
 }) => {
-  // const resetClicked = () => {
-  //   setClicked(false);
-  // };
-
   const handleClick = () => {
     if (clicked === false) {
       incrementScore();
@@ -24,11 +20,11 @@ const Card = ({
   };
   return (
     <div
-      className="bg-gray-500 m-4 text-center cursor-pointer shadow-2xl rounded-xl"
+      className="bg-gray-500 m-4 text-center cursor-pointer shadow-2xl rounded-xl transition-all"
       onClick={handleClick}
     >
       <p>{clicked.toString()}</p>
-      <div className="bg-lime-300 p-12 rounded-b-xl">
+      <div className="bg-stone-600 p-12 rounded-b-xl">
         <p>{name}</p>
       </div>
     </div>

@@ -37,7 +37,7 @@ const Content = ({ incrementScore, resetScore }) => {
   useEffect(() => {
     const initialCards = structuredClone(cardData);
     const shuffled = shuffle(initialCards);
-    setCardData(initialCards);
+    setCardData(shuffled);
   }, []);
 
   const setClicked = (name) => {
