@@ -1,36 +1,32 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import shuffle from "../utils/shuffle";
+import ashe from "../assets/Ashe_0.jpeg";
+import asol from "../assets/AurelionSol_0.jpeg";
+import corki from "../assets/Corki_0.jpeg";
+import khazix from "../assets/Khazix_0.jpeg";
 
 const Content = ({ incrementScore, resetScore }) => {
   const [cardData, setCardData] = useState([
     {
-      name: "Kevin",
+      name: "Asol",
       clicked: false,
+      src: asol,
     },
     {
-      name: "Ryan",
+      name: "Ashe",
       clicked: false,
+      src: ashe,
     },
     {
-      name: "Colin",
+      name: "Corki",
       clicked: false,
+      src: corki,
     },
     {
-      name: "Kate",
+      name: "Khazix",
       clicked: false,
-    },
-    {
-      name: "Joel",
-      clicked: false,
-    },
-    {
-      name: "Ellie",
-      clicked: false,
-    },
-    {
-      name: "Fernandinho",
-      clicked: false,
+      src: khazix,
     },
   ]);
 
@@ -61,7 +57,7 @@ const Content = ({ incrementScore, resetScore }) => {
   return (
     <>
       <div className="bg-black grow p-12">
-        <div className="container max-w-fit mx-auto flex flex-wrap bg-slate-700 p-4 justify-center">
+        <div className="container max-w-fit mx-auto flex flex-wrap bg-black p-4 justify-center">
           {cardData.map((card) => {
             return (
               <Card
@@ -72,6 +68,7 @@ const Content = ({ incrementScore, resetScore }) => {
                 resetScore={resetScore}
                 resetClicked={resetClicked}
                 setClicked={setClicked}
+                src={card.src}
               />
             );
           })}

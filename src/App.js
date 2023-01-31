@@ -23,7 +23,6 @@ function App() {
         score={score}
         resetScore={resetScore}
       />
-      <button onClick={resetScore}>Reset Score</button>
     </div>
   );
 }
