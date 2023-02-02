@@ -1,34 +1,14 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import shuffle from "../utils/shuffle";
+import useCards from "../data/champions";
 import ashe from "../assets/Ashe_0.jpeg";
 import asol from "../assets/AurelionSol_0.jpeg";
 import corki from "../assets/Corki_0.jpeg";
 import khazix from "../assets/Khazix_0.jpeg";
 
 const Content = ({ incrementScore, resetScore }) => {
-  const [cardData, setCardData] = useState([
-    {
-      name: "Asol",
-      clicked: false,
-      src: asol,
-    },
-    {
-      name: "Ashe",
-      clicked: false,
-      src: ashe,
-    },
-    {
-      name: "Corki",
-      clicked: false,
-      src: corki,
-    },
-    {
-      name: "Khazix",
-      clicked: false,
-      src: khazix,
-    },
-  ]);
+  const [cardData, setCardData] = useCards();
 
   useEffect(() => {
     const initialCards = structuredClone(cardData);

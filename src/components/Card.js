@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Card = ({
   name,
   clicked,
@@ -23,10 +21,9 @@ const Card = ({
       className="bg-gray-500 m-4 text-center cursor-pointer rounded-xl transition-all border border-white"
       onClick={handleClick}
     >
-      <p>{clicked.toString()}</p>
-      <div className="bg-stone-600 shadow-lg p-4 rounded-b-xl">
+      <div className="bg-stone-600 shadow-lg p-4 rounded-xl">
         <p>{name}</p>
-        <img src={src} alt="Ashe" className="w-60"></img>
+        <img src={src} alt="Ashe" className="w-60 rounded-xl shadow-2xl"></img>
       </div>
     </div>
   );
