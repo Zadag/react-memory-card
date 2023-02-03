@@ -32,13 +32,10 @@ const Content = ({ incrementScore, resetScore }) => {
             return (
               <Card
                 key={card.name}
-                name={card.name}
-                clicked={card.clicked}
                 incrementScore={incrementScore}
                 resetScore={resetScore}
                 resetClicked={resetClicked}
                 setClicked={setClicked}
-                src={card.src}
                 card={card}
               />
             );
