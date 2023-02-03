@@ -1,20 +1,10 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import shuffle from "../utils/shuffle";
-import useCards from "../data/champions";
-import ashe from "../assets/Ashe_0.jpeg";
-import asol from "../assets/AurelionSol_0.jpeg";
-import corki from "../assets/Corki_0.jpeg";
-import khazix from "../assets/Khazix_0.jpeg";
+import cards from "../data/cards";
 
 const Content = ({ incrementScore, resetScore }) => {
-  const [cardData, setCardData] = useCards();
-
-  useEffect(() => {
-    const initialCards = structuredClone(cardData);
-    const shuffled = shuffle(initialCards);
-    setCardData(shuffled);
-  }, []);
+  const [cardData, setCardData] = useState(shuffle(cards));
 
   const setClicked = (name) => {
     const newCards = structuredClone(cardData);
@@ -49,6 +39,7 @@ const Content = ({ incrementScore, resetScore }) => {
                 resetClicked={resetClicked}
                 setClicked={setClicked}
                 src={card.src}
+                card={card}
               />
             );
           })}

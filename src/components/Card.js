@@ -1,12 +1,11 @@
 const Card = ({
-  name,
-  clicked,
   incrementScore,
   resetScore,
   resetClicked,
   setClicked,
-  src,
+  card,
 }) => {
+  const { name, clicked, src } = card;
   const handleClick = () => {
     if (clicked === false) {
       incrementScore();
